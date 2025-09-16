@@ -1,0 +1,33 @@
+[project]
+name = "f1-project-new"
+version = "0.1.0"
+description = "F1 race win probability model"
+readme = "README.md"
+# Set this to your actual interpreter version range:
+requires-python = ">=3.10"
+
+dependencies = [
+    "fastf1",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "tqdm",
+    # "seaborn",  # optional; only if you really need it
+]
+
+[project.scripts]
+# This is the console command you'll run in the terminal:
+f1-project-new = "f1_project.cli:main"
+
+
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = ["pytest"]
+
+
+

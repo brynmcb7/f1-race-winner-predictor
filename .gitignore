@@ -1,0 +1,30 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Python cache & build
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dll
+.build/
+build/
+dist/
+*.egg-info/
+*.dist-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Virtual envs & local config
+.venv/
+.env
+.vscode/
+
+# Project outputs (generated)
+cache/             # FastF1 cache
+data/              # built CSVs
+reports/           # figures + metrics
+artifacts/
