@@ -127,7 +127,7 @@ def build_dataset(years:List[int]) -> pd.DataFrame:
                 if sess is None: skips["load_failed"]+=1; skipped_events.append((year,rnd,name,"load_failed")); continue
                 res = sess.results
                 if res is None or len(res)==0: skips["no_results"]+=1; skipped_events.append((year,rnd,name,"no_results")); continue
-                # Winner (robust)
+                # Winner
                 winner_abbr = None
                 for pos_col in ("Position","ClassifiedPosition","FinalPosition"):
                     if pos_col in res.columns:
@@ -204,6 +204,7 @@ def build_dataset(years:List[int]) -> pd.DataFrame:
     
 
     #DEBUG
+    '''
     if skipped_events:
         reasons_all = Counter([reason for (_, _, _, reason) in skipped_events])
         print("Skipped events by reason:", dict(reasons_all))
@@ -215,7 +216,7 @@ def build_dataset(years:List[int]) -> pd.DataFrame:
         print("Details (2025):")
         for yr, rnd, name, reason in sk_2025:
             print(f"  {yr} R{rnd} {name}: {reason}")
-
+    '''
     return df
 
 def cli():
